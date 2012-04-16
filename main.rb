@@ -15,6 +15,10 @@ get '/root_patched' do
   redirect '/'
 end
 
+get '/favicon.ico' do
+  halt 404
+end
+
 get '/:name' do
   slim params[:name].to_sym
 end
