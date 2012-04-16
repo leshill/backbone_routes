@@ -15,6 +15,10 @@ get '/root_patched' do
   redirect '/'
 end
 
+get '/robots.txt' do
+  halt 404
+end
+
 get '/favicon.ico' do
   halt 404
 end
