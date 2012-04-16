@@ -1,0 +1,16 @@
+- content_for :js do
+  script type='text/javascript' src='/backbone.0.9.2.js'
+
+h1 Backbone 0.9.2 (patched)
+
+p
+  | When specifying the root, behavior is correct in both push state and hash
+  |  change browsers.  . URL changes are correct, the initial route is found, and
+  |  clicking a link twice for the current route does not navigate.
+
+== slim :example, locals: {path: '/patched'}
+
+javascript:
+  $(function() {
+    Backbone.history.start({pushState: true, root: '/patched'});
+  });

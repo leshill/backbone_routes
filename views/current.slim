@@ -1,0 +1,20 @@
+- content_for :js do
+  script type='text/javascript' src='/backbone.0.9.2.js'
+
+h1 Backbone 0.9.2
+
+p
+  | When specifying the root, the initial route is found.
+p
+  | The URL changes incorrectly (includes the root.)
+p
+  | In push state browsers, clicking a link navigation ('/myroute') twice for the
+  |  current route navigates when it should not. JS navigation ('myroute')
+  |  and hash change browsers recognize the route and do not navigate.
+
+== slim :example, locals: {path: '/current'}
+
+javascript:
+  $(function() {
+    Backbone.history.start({pushState: true, root: '/current'});
+  });

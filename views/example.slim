@@ -1,0 +1,45 @@
+h2 Backbone routes
+
+p
+  | Backbone navigation is 
+  a href='#' class='navigate'
+    span.off style='display:none;' off
+    span.on on
+
+ul
+  li
+    a href="#{path.empty? ? '#' : path}" class='backbone' Page Root
+  li
+    a href="#{path}/content" class='backbone' Basic path
+  li
+    a href="#{path}/content/42" class='backbone' Param path
+  li
+    a href='js_nav' class='js_nav' JS navigation
+  li
+    a href='#' Navigate to '#'
+
+h2 Scenarios
+
+h3 Backbone v0.9.2
+
+ul
+  li
+    a href='/' Site Root
+  li
+    a href='/current' Page Root
+  li
+    a href='/current/content/42' Page Root push state link
+  li
+    a href='/current#content/42' Page Root hash change link
+
+h3 Backbone v0.9.2 patched
+
+ul
+  li
+    a href='/root_patched' Site Root (this is a redirect)
+  li
+    a href='/patched' Page Root
+  li
+    a href='/patched/content/42' Page Root push state link
+  li
+    a href='/patched#content/42' Page Root hash change link

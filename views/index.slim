@@ -1,0 +1,26 @@
+- content_for :js do
+  script type='text/javascript' src='/backbone.0.9.2#{patched_js ? '.patch.js' : '.js'}'
+
+h1 Bug in Router with root option
+
+p
+  | This page has standard (no root option) routing and works as expected in
+  |  push state and hash change browsers. URL changes are correct, the
+  |  initial route is found, and clicking a link twice for the current route
+  |  does not navigate.
+p
+  - if patched_js
+    | This page is using Backbone 0.9.2 patched.
+  - else
+    | This page is using Backbone 0.9.2.
+p
+  | The bug manifests on pages with the root option 
+  a href='/current' specified
+  | .
+
+== slim :example, locals: {path: ''}
+
+javascript:
+  $(function() {
+    Backbone.history.start({pushState: true});
+  });

@@ -1,0 +1,12 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title Backbone Routes Demo
+    script type='text/javascript' src='/jquery.js'
+    script type='text/javascript' src='/underscore-1.3.1.js'
+    == yield_content :js
+    script type='text/javascript' src='/routes_example.js'
+    script type='text/javascript' src='/setup.js'
+  body
+    == yield
